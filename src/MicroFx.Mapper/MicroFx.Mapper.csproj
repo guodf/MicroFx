@@ -1,0 +1,17 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>true</PackageRequireLicenseAcceptance>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>../MicroFx.pfx</AssemblyOriginatorKeyFile>
+    <PackageLicenseUrl>https://github.com/guodf/MicroFx</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/guodf/MicroFx</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/guodf/MicroFx</RepositoryUrl>
+    <Authors>guodf</Authors>
+    <Company>Net_win</Company>
+    <Product>MicroFx.Mapper</Product>
+  </PropertyGroup>
+
+</Project>

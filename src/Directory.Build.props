@@ -1,0 +1,11 @@
+﻿<Project>
+  <Import Project="version.props" />
+  <PropertyGroup>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>MicroFx.pfx</AssemblyOriginatorKeyFile>
+    <Authors>guodf</Authors>
+    <Product>MicroFx</Product>
+    <PackageProjectUrl>https://github.com/guodf/microfx</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/guodf/microfx</RepositoryUrl>
+  </PropertyGroup>
+</Project>

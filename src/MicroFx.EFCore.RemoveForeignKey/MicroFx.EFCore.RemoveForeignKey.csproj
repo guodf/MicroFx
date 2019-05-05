@@ -1,0 +1,22 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <SignAssembly>true</SignAssembly>
+    <AssemblyOriginatorKeyFile>../MicroFx.pfx</AssemblyOriginatorKeyFile>
+    <Version>0.0.1</Version>
+    <GeneratePackageOnBuild>true</GeneratePackageOnBuild>
+    <Authors>guodf</Authors>
+    <Product>MicroFx</Product>
+    <Company />
+    <PackageId />
+    <PackageProjectUrl>https://github.com/guodf/microfx</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/guodf/microfx</RepositoryUrl>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore" Version="2.1.2" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Relational" Version="2.1.2" />
+  </ItemGroup>
+
+</Project>

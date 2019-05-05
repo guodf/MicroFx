@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.28803.202
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ThumbnailSample", "ThumbnailSample\ThumbnailSample.csproj", "{2BB28C5D-BDB9-410A-A5CF-E248F9CE278F}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MicroFx.Thumbnails", "..\src\MicroFx.Thumbnails\MicroFx.Thumbnails.csproj", "{3F215189-8B36-4968-8099-E0C0D4CA321D}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{2BB28C5D-BDB9-410A-A5CF-E248F9CE278F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2BB28C5D-BDB9-410A-A5CF-E248F9CE278F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2BB28C5D-BDB9-410A-A5CF-E248F9CE278F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2BB28C5D-BDB9-410A-A5CF-E248F9CE278F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3F215189-8B36-4968-8099-E0C0D4CA321D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3F215189-8B36-4968-8099-E0C0D4CA321D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3F215189-8B36-4968-8099-E0C0D4CA321D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3F215189-8B36-4968-8099-E0C0D4CA321D}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {232AF668-F6C5-43C3-A9E2-682CEB4F46F8}
+	EndGlobalSection
+EndGlobal

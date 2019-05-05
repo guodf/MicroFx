@@ -1,0 +1,33 @@
+# ASP.NET Core
+# Build and test ASP.NET Core projects targeting .NET Core.
+# Add steps that run tests, create a NuGet package, deploy, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/dotnet-core
+
+trigger:
+  - master
+
+pool:
+  vmImage: 'Ubuntu-16.04'
+
+variables:
+  buildConfiguration: 'Release'
+
+steps:
+- task: DotNetCoreCLI@2
+  inputs:
+    command: 'build'
+    projects: 'src/Thumbnails/src/MicroFx.Thumbnails'
+    workingDirectory: '.'
+  displayName: 'build MicroFx.Thumbnails'
+
+- task: DotNetCoreCLI@2
+  displayName: 'dotnet pack MicroFx.Thumbnails'
+  inputs:
+    command: 'pack'
+    searchPatternPack: 'src/Thumbnails/src/MicroFx.Thumbnails/*.csproj'
+
+- task: DotNetCoreCLI@2
+  displayName: 'push nupkg MicroFx.Thumbnails to studyxx'
+  inputs:
+    command: 'push'
+    feedPublish: 'studyxx'
