@@ -7,7 +7,7 @@ trigger:
   - master
 
 pool:
-  vmImage: 'Ubuntu-16.04'
+  vmImage: 'windows-2019'
 
 variables:
   buildConfiguration: 'Release'
@@ -31,3 +31,10 @@ steps:
   inputs:
     command: 'push'
     feedPublish: 'studyxx'
+
+- task: PublishSymbols@2
+  inputs:
+    SymbolsFolder: '$(Build.SourcesDirectory)/src/Thumbnails/src/MicroFx.Thumbnails'
+    IndexSources: true
+    PublishSymbols: true
+    SymbolServerType: 'TeamServices'
