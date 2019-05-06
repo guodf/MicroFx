@@ -7,7 +7,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\..\src\MicroFx.Thumbnails\MicroFx.Thumbnails.csproj" />
+    <PackageReference Include="MicroFx.Thumbnails" Version="1.0.0" />
   </ItemGroup>
 
 </Project>
