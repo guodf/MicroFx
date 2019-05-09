@@ -1,0 +1,59 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>MicroFx.Identity</name>
+    </assembly>
+    <members>
+        <member name="T:MicroFx.Identity.Controllers.TokenController">
+            <summary>
+            用户认证API
+            </summary>
+        </member>
+        <member name="M:MicroFx.Identity.Controllers.TokenController.#ctor(Microsoft.AspNetCore.Identity.SignInManager{Microsoft.AspNetCore.Identity.IdentityUser},Microsoft.AspNetCore.Identity.UserManager{Microsoft.AspNetCore.Identity.IdentityUser},Microsoft.Extensions.Logging.ILogger{MicroFx.Identity.Controllers.TokenController},Microsoft.Extensions.Configuration.IConfiguration)">
+            <summary>
+            授权管理
+            </summary>
+            <param name="signInManager"></param>
+            <param name="userManager"></param>
+            <param name="logger"></param>
+            <param name="configuration"></param>
+        </member>
+        <member name="M:MicroFx.Identity.Controllers.TokenController.PostAsync(MicroFx.Identity.Dtos.User.SignInDto)">
+            <summary>
+            生成用户Token
+            </summary>
+            <returns>
+                {token:"token",Seconds:100}
+            </returns>
+            <param name="sign"></param>
+        </member>
+        <member name="M:MicroFx.Identity.Controllers.TokenController.Post">
+            <summary>
+            刷新Token
+            </summary>
+            <returns>{token:"token",Seconds:100}</returns>
+        </member>
+        <member name="T:MicroFx.Identity.Startup">
+            <summary>
+            Startup
+            </summary>
+        </member>
+        <member name="M:MicroFx.Identity.Startup.#ctor(Microsoft.Extensions.Configuration.IConfiguration,Microsoft.AspNetCore.Hosting.IHostingEnvironment)">
+            <summary>
+            Startup
+            </summary>
+            <param name="configuration"></param>
+            <param name="env"></param>
+        </member>
+        <member name="P:MicroFx.Identity.Startup.Configuration">
+            <summary>
+            Configuration
+            </summary>
+        </member>
+        <member name="M:MicroFx.Identity.Startup.ConfigureServices(Microsoft.Extensions.DependencyInjection.IServiceCollection)">
+            <summary>
+            This method gets called by the runtime. Use this method to add services to the container.
+            </summary>
+        </member>
+    </members>
+</doc>

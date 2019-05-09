@@ -18,12 +18,22 @@ namespace MicroFx.Thumbnails
             FFmpegBinariesHelper.RegisterFFmpegBinaries();
         }
 
-        public static bool FromIamge(string srcFile, string outFile, Size size)
+        public static bool FromIamge(string srcFile, string outFile,Size size)
         {
             using (var bitmap = SKBitmap.Decode(srcFile))
             {
-                using (var newBitmap = bitmap.Resize(new SKImageInfo(size.Width, size.Height), SKFilterQuality.High))
+                if (bitmap.Height > bitmap.Width)
                 {
+                    size.Width = bitmap.Width * size.Height / bitmap.Height;
+                }
+                else
+                {
+                    size.Height = bitmap.Height * size.Width / bitmap.Width;
+                }
+                
+                using (var newBitmap = new SKBitmap(new SKImageInfo(size.Width,size.Height)))
+                {
+                    bitmap.ScalePixels(newBitmap, SKFilterQuality.Medium);
                     using (var image = SKImage.FromBitmap(newBitmap))
                     {
                         using (var output = File.OpenWrite(outFile))
@@ -43,9 +53,18 @@ namespace MicroFx.Thumbnails
             {
                 using (var bitmap = new SKBitmap(sKCodec.Info))
                 {
-                    sKCodec.GetPixels(sKCodec.Info, bitmap.GetPixels(), new SKCodecOptions(0));
-                    using (var newBitmap = bitmap.Resize(new SKImageInfo(size.Width, size.Height), SKFilterQuality.High))
+                    if (bitmap.Height > bitmap.Width)
                     {
+                        size.Width = bitmap.Width * size.Height / bitmap.Height;
+                    }
+                    else
+                    {
+                        size.Height = bitmap.Height * size.Width / bitmap.Width;
+                    }
+                    sKCodec.GetPixels(sKCodec.Info, bitmap.GetPixels(), new SKCodecOptions(0));
+                    using (var newBitmap = new SKBitmap(new SKImageInfo(size.Width, size.Height)))
+                    {
+                        bitmap.ScalePixels(newBitmap, SKFilterQuality.Medium);
                         using (var image = SKImage.FromBitmap(newBitmap))
                         {
                             using (var output = File.OpenWrite(outFile))
@@ -98,10 +117,9 @@ namespace MicroFx.Thumbnails
                     //获取第一帧
                     if (vsd.TryDecodeNextFrame(out var frame))
                     {
-                        var convertedFrame = vfc.Convert(frame);
+                        var convertedFrame = vfc.Convert(frame);                       
                         using (var bitmap = new Bitmap(convertedFrame.width, convertedFrame.height, convertedFrame.linesize[0], PixelFormat.Format24bppRgb, (IntPtr)convertedFrame.data[0]))
-                        {
-                           
+                        {                 
                             bitmap.Save(outFile, ImageFormat.Jpeg);
                             return true;
                         }      
@@ -114,7 +132,7 @@ namespace MicroFx.Thumbnails
                     //    using (var bitmap = new Bitmap(convertedFrame.width, convertedFrame.height, convertedFrame.linesize[0], PixelFormat.Format24bppRgb, (IntPtr)convertedFrame.data[0]))
                     //        bitmap.Save($"frame.{frameNumber:D8}.jpg", ImageFormat.Jpeg);
 
-                    //    Console.WriteLine($"frame: {frameNumber}");
+                    //    Console.WriteLine($"frame: {frameNumber}"); 
                     //    frameNumber++;
                     //}
                 }

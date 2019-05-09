@@ -6,7 +6,7 @@ using System.Text;
 
 namespace MicroFx.Thumbnails
 {
-    internal class FFmpegBinariesHelper
+    public class FFmpegBinariesHelper
     {
         private const string LD_LIBRARY_PATH = "LD_LIBRARY_PATH";
 
