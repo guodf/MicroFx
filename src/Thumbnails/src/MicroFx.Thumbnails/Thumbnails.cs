@@ -22,9 +22,10 @@ namespace MicroFx.Thumbnails
         {
             using (var bitmap = SKBitmap.Decode(srcFile))
             {
-                if (bitmap.Height > bitmap.Width)
+                if (bitmap.Height < bitmap.Width)
                 {
                     size.Width = bitmap.Width * size.Height / bitmap.Height;
+                    
                 }
                 else
                 {
